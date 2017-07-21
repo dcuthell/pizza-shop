@@ -35,7 +35,7 @@ Pizza.prototype.calcPrice = function(){
   if(this.size === "large"){
     price += 8.00;
   }
-
+  price += (this.toppings.length * 2.00);
   return price;
 }
 
@@ -54,7 +54,6 @@ $(document).ready(function(){
     $("input:checkbox:checked").map(function(){
       toppings.push($(this).val());
     });
-    $("input:radio[name=size]:checked").prop('checked', false);
     $("input:checkbox:checked").prop('checked', false);
     var thisPie = new Pizza(size, toppings, "defaultCustomer");
     store.addToOrder(thisPie);
@@ -64,8 +63,6 @@ $(document).ready(function(){
     var output = "";
     for(i = 0; i < store.currentOrder.length; i++){
       store.currentOrder[i].customer = name;
-    }
-    for(i = (store.currentOrder.length-1); i >= 0; i--){
       output += "<li>" + store.currentOrder[i].size + " pie: Price - $" + store.currentOrder[i].calcPrice() + "</li>";
     }
     $("#orderList").html(output);
