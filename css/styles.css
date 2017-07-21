@@ -1,1 +1,7 @@
+.jumbotron{
+  text-align: center;
+}
 
+#customerInfo{
+  display: none;
+}
