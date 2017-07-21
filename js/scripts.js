@@ -29,5 +29,12 @@ Store.prototype.storeOrders = function(){
 
 //UI
 $(document).ready(function(){
-
+  $("#newOrder").click(function(){
+    $("#openScreen").hide();
+    $("#orderForm").show();
+  });
+  $("#finishOrder").click(function(){
+    $("#orderForm").hide();
+    $("#customerInfo").show();
+  });
 });
