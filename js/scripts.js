@@ -54,12 +54,17 @@ $(document).ready(function(){
     $("input:checkbox:checked").map(function(){
       toppings.push($(this).val());
     });
+    $("label").removeClass('active');
+    $("input:radio[name=size]:checked").prop('checked', false);
+    $("input:radio[name=size][value=small]").prop('checked', true);
+    $("#defaultSize").addClass('active');
     $("input:checkbox:checked").prop('checked', false);
     var thisPie = new Pizza(size, toppings, "defaultCustomer");
     store.addToOrder(thisPie);
   });
   $("#placeOrder").click(function(){
     var name = $("input#customerName").val();
+    $("input#customerName").val("");
     var output = "";
     for(i = 0; i < store.currentOrder.length; i++){
       store.currentOrder[i].customer = name;

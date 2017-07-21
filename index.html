@@ -19,7 +19,7 @@
       </div>
       <div class="well" id="orderForm">
         <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary active">
+          <label class="btn btn-primary active" id="defaultSize">
             <input type="radio" name="size" value="small" autocomplete="off" checked>Small
           </label>
           <label class="btn btn-primary">
@@ -31,30 +31,30 @@
         </div>
         <div class="checkbox" id="pizzaToppingsMeat">
           <label>
-            <input type="checkbox" value="pepperoni">
-            Put some pep in your step...and on your pizza.
+            <input type="checkbox" name="premtop" value="pepperoni">
+            Pepperoni
           </label>
           <label>
             <input type="checkbox" value="sausage">
-            Sausage, the miracle meat.
+            Sausage
           </label>
           <label>
             <input type="checkbox" value="ham">
-            If it's your kind of jam, then add some ham.
+            Ham
           </label>
         </div>
         <div class="checkbox" id="pizzaToppingsExtras">
           <label>
             <input type="checkbox" value="hotpeppers">
-            Hot peppers
+            Hot Peppers
           </label>
           <label>
             <input type="checkbox" value="pineapple">
             Pineapple
           </label>
           <label>
-            <input type="checkbox" value="basil">
-            Basil
+            <input type="checkbox" value="olives">
+            Olives
           </label>
         </div>
         <button type="button" class="btn btn-danger btn-lg" id="finishOrder">Finish</button>
