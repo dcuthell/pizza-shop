@@ -67,7 +67,7 @@ $(document).ready(function(){
     });
     $("label").removeClass('active');
     $("input:radio[name=size]:checked").prop('checked', false);
-    $("input:radio[value=small]").prop('checked', true);
+    $("input:radio[name=size][value=Small]").prop('checked', true);
     $("#defaultSize").addClass('active');
     $("input:checkbox:checked").prop('checked', false);
     var thisPie = new Pizza(size, toppings, "defaultCustomer");
