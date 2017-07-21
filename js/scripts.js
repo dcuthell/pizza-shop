@@ -74,8 +74,28 @@ $(document).ready(function(){
     $("#customerInfo").hide();
     $("#orderForm").show();
   });
+  $("#goBack1").click(function(){
+    $("#orderSummary").hide();
+    $("#openScreen").show();
+  });
   $("#oldOrders").click(function(){
     $("#openScreen").hide();
-    $("#orderForm").show();
+    $("#pastOrders").show();
+    var output = "";
+    for(i = 0; i < store.pastOrders.length; i++){
+      var theseToppings = "";
+      for(j = 0; j < store.pastOrders[i].toppings.length; j++){
+        theseToppings += store.pastOrders[i].toppings[j] + ", ";
+      }
+      if(theseToppings === ""){
+        theseToppings = "no toppings ";
+      }
+      output += "<li>" + store.pastOrders[i].customer + " ordered a " + store.pastOrders[i].size + " size pie with " + theseToppings + "for a total of: $" +store.pastOrders[i].calcPrice() + "</li>";
+    }
+    $("#pastOrderList").html(output);
+  });
+  $("#goBack2").click(function(){
+    $("#pastOrders").hide();
+    $("#openScreen").show();
   });
 });

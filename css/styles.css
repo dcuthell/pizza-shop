@@ -2,6 +2,6 @@
   text-align: center;
 }
 
-#customerInfo, #orderForm, #orderSummary{
+#customerInfo, #orderForm, #orderSummary, #pastOrders{
   display: none;
 }
