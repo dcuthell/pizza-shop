@@ -2,6 +2,6 @@
   text-align: center;
 }
 
-#customerInfo, #orderForm{
+#customerInfo, #orderForm, #orderSummary{
   display: none;
 }

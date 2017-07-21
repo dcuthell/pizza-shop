@@ -61,22 +61,24 @@ $(document).ready(function(){
   });
   $("#placeOrder").click(function(){
     var name = $("input#customerName").val();
+    var output = "";
     for(i = 0; i < store.currentOrder.length; i++){
       store.currentOrder[i].customer = name;
     }
-    console.log(store.currentOrder[0].size);
-    console.log(store.currentOrder[0].toppings);
-    console.log(store.currentOrder[0].customer);
+    for(i = (store.currentOrder.length-1); i >= 0; i--){
+      output += "<li>" + store.currentOrder[i].size + " pie: Price - $" + store.currentOrder[i].calcPrice() + "</li>";
+    }
+    $("#orderList").html(output);
     store.storeOrders();
-    console.log(store.pastOrders[0].size);
-    console.log(store.pastOrders[0].toppings);
-    console.log(store.pastOrders[0].customer);
-    $("#openScreen").show();
+    $("#orderSummary").show();
     $("#customerInfo").hide();
   });
   $("#morePizza").click(function(){
     $("#customerInfo").hide();
     $("#orderForm").show();
   });
-
+  $("#oldOrders").click(function(){
+    $("#openScreen").hide();
+    $("#orderForm").show();
+  });
 });
