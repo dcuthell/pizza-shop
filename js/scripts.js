@@ -11,8 +11,17 @@ function Pizza(size, toppings, customer){
   this.customer = customer;
 }
 
-function Customer(name){
-  this.name = name;
+function Customer(name, address){
+  if(name === ""){
+    this.name = "Default Customer"
+  }else{
+    this.name = name;
+  }
+  if(address === ""){
+    this.address = "Takeout Order"
+  }else{
+    this.address = address;
+  }
 }
 
 //Prototypes
@@ -42,10 +51,12 @@ Pizza.prototype.calcPrice = function(){
 //UI
 $(document).ready(function(){
   store = new Store();
+
   $("#newOrder").click(function(){
     $("#openScreen").hide();
     $("#orderForm").show();
   });
+
   $("#finishOrder").click(function(){
     $("#orderForm").hide();
     $("#customerInfo").show();
@@ -62,14 +73,15 @@ $(document).ready(function(){
     var thisPie = new Pizza(size, toppings, "defaultCustomer");
     store.addToOrder(thisPie);
   });
+
   $("#placeOrder").click(function(){
-    var name = $("input#customerName").val();
-    $("input#customerName").val("");
     var output = "";
     for(i = 0; i < store.currentOrder.length; i++){
-      store.currentOrder[i].customer = name;
+      store.currentOrder[i].customer = new Customer($("input#customerName").val(), $("input#customerAddress").val());
       output += "<li>" + store.currentOrder[i].size + " pie: Price - $" + store.currentOrder[i].calcPrice() + "</li>";
     }
+    $("input#customerName").val("");
+    $("input#customerAddress").val("");
     $("#orderList").html(output);
     store.storeOrders();
     $("#orderSummary").show();
@@ -95,7 +107,12 @@ $(document).ready(function(){
       if(theseToppings === ""){
         theseToppings = "no toppings ";
       }
-      output += "<li>" + store.pastOrders[i].customer + " ordered a " + store.pastOrders[i].size + " size pie with " + theseToppings + "for a total of: $" +store.pastOrders[i].calcPrice() + "</li>";
+      output += "<li>" + store.pastOrders[i].customer.name + " ordered a " + store.pastOrders[i].size + " size pie with " + theseToppings + "for a total of: $" +store.pastOrders[i].calcPrice();
+      if(store.pastOrders[i].customer.address === "Takeout Order"){
+        output += "<br>Order for Takeout</li>";
+      }else{
+        output += "<br>Order delivered to: " + store.pastOrders[i].customer.address + "</li>";
+      }
     }
     $("#pastOrderList").html(output);
   });
