@@ -1,49 +1,36 @@
-# _Ping-Pong_
+# _Pizza Shop_
 
-#### _The Ping-Pong site will display numbers, "ping", "pong", and "ping-pong" depending in the user's input and selection, 07/14/17_
+#### _The Pizza Shop website will allow user to create, price, and order pizzas, 07/21/17_
 
 #### By _**David Cuthell**_
 
 ## Description
 
-_The Ping-Pong site will count up to or down from a user's number, changing multiples of 3, 5, and 15 to "ping", "pong", and "ping-pong", respectively. It will then display the numbers and ping-pongs in a list. If the input given is not a number, the site will display an error pop-up._
+_The Pizza Shop Website will allow users to create their own custom pizza, selecting from 3 different size and a variety of different toppings. Upon creating a pizza, the user will be able to create another pizza, or complete their order. They will see an order summary, with a price for each pizza. The user may also see a list of previous orders._
 
 ## Setup/Installation Requirements
 
-* _Type https://dcuthell.github.io/ping-pong into your web browser_
+* _Type https://dcuthell.github.io/pizza-shop into your web browser_
 * _Hit enter to go to the page_
-* _Enter a number_
-* _Hit "Ping Pong!" or "Pong Ping!"_
-* _Check out your results_
-* _Rejoice_
+* _Choose "Place an Order"_
+* _Choose your size and toppings, then hit "Finish"_
+* _Enter your name and hit "Submit Order" to checkout, our "More Pizza!" for another pizza_
+* _Review order summary and click "Ok" to return to main page_
+* _Click "See Past Orders" to see previous orders_
+* _Click "Ok" to return to main page. That's it!_
 
 ## Specs
 
-* It can count up to the provided number.
-  * __Example Input:__ 2
-  * __Example Output:__ [1,2]
-* It can count backwards from the provided number to 0.
-  * __Example Input:__ 2
-  * __Example Output:__ [1,2]
-* It can replace numbers divisible by 3 with the word "ping".
-  * __Example Input:__ [3, 4, 5, 6]
-  * __Example Output:__ ["ping", 4, 5, "ping"]
-* It can replace numbers divisible by 5 with the word "pong".
-  * __Example Input:__ [3, 4, 5, 6]
-  * __Example Output:__ [3, 4, "pong", 6]
-* It can replace numbers divisible by 15 with the word "ping-pong".
-  * __Example Input:__ [13, 14, 15, 16]
-  * __Example Output:__ [13, 14, "ping-pong", 16]
-* It can create list items in a string for each number or word given.
-  * __Example Input:__ [14, "ping-pong"]
-  * __Example Output:__ "\<li>14\</li>\<li>"ping-pong"\</li>"
-* It will throw an alert message if given input that is not a number.
-  * __Example Input:__ "12a"
-  * __Example Output:__ "Please enter in a valid number"
+* It will price the pizza based off the size.
+  * __Example Input:__ Pizza Size: Medium
+  * __Example Output:__ Price: $13.5
+* It will price the pizza based off the number of toppings.
+  * __Example Input:__ Pizza Size: Medium, Toppings: [Pepperoni, Ham]
+  * __Example Output:__ Price: $17.5
 
 ## Known Bugs
 
-_Some text sizing issues are being addressed_
+_None at this time_
 
 ## Support and contact details
 
