@@ -5,3 +5,12 @@
 #customerInfo, #orderForm, #orderSummary, #pastOrders{
   display: none;
 }
+
+body{
+  background-image: url("pizza.png");
+}
+
+.well, .jumbotron{
+  background-color:rgba(0, 0, 0, 0.5);
+  color: lightgreen;
+}
