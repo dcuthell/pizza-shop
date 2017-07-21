@@ -14,3 +14,9 @@ body{
   background-color:rgba(0, 0, 0, 0.5);
   color: lightgreen;
 }
+
+#openScreen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
