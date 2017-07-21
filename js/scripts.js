@@ -33,8 +33,14 @@ $(document).ready(function(){
     $("#openScreen").hide();
     $("#orderForm").show();
   });
-  $("#finishOrder").click(function(){
+  $("#finishOrder").click(function(event){
     $("#orderForm").hide();
     $("#customerInfo").show();
+    var toppings = [];
+    $("input:checkbox:checked").map(function(){
+      toppings.push($(this).val());
+    });
+    alert(toppings[0] + toppings[1] + toppings[2]);
+    event.preventDefault;
   });
 });
