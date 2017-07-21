@@ -38,10 +38,10 @@ Store.prototype.storeOrders = function(){
 
 Pizza.prototype.calcPrice = function(){
   var price = 10.00;
-  if(this.size === "medium"){
+  if(this.size === "Medium"){
     price += 3.50;
   }
-  if(this.size === "large"){
+  if(this.size === "Large"){
     price += 8.00;
   }
   price += (this.toppings.length * 2.00);
